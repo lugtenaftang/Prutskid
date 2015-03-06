@@ -18,6 +18,11 @@ public class Playah : MonoBehaviour
 	private float timeAtStart;
 	private float timeAtFinish;
 	private float timeTaken;
+
+	private float counterStartedAt;
+	private float countedSoFar;
+	private float countFor;
+
 	private bool canIMove;
 	public float speed;
 	public float jumpHeight;
@@ -85,6 +90,13 @@ public class Playah : MonoBehaviour
 	}
 
 
+	private void Restart ()
+	{
+		timeText.enabled = true;
+		rigidbody2D.isKinematic = false;
+		setCanIMove(true);
+		timeAtStart = Time.time;
+	}
 	
 	void Update() 
 	{
@@ -120,9 +132,11 @@ public class Playah : MonoBehaviour
 			transform.position = startPosition;
 			stopBall();
 			setTextActive(false);
-			setCanIMove(true);
-			timeAtStart = Time.time;
+			setCanIMove(false);
+			rigidbody2D.isKinematic = true;
+			Invoke("Restart", 1f);
 		}
+
 		if(Input.GetKey(KeyCode.S))
 		{
 			PlayerPrefs.DeleteKey(level.ToString());
@@ -135,9 +149,10 @@ public class Playah : MonoBehaviour
 			stopBall();
 			level = 1;
 			setTextActive(false);
-			setCanIMove(true);
-			timeAtStart = Time.time;
+			setCanIMove(false);
+			rigidbody2D.isKinematic = true;
 			displayScore();
+			Invoke ("Restart", 1f);
 		}
 		if(Input.GetKeyDown(KeyCode.Alpha2))
 		{
@@ -146,9 +161,10 @@ public class Playah : MonoBehaviour
 			stopBall();
 			level = 2;
 			setTextActive(false);
-			setCanIMove(true);
-			timeAtStart = Time.time;
+			setCanIMove(false);
+			rigidbody2D.isKinematic = true;
 			displayScore();
+			Invoke ("Restart", 1f);
 		}
 
 		if(Input.GetKeyDown(KeyCode.H))
