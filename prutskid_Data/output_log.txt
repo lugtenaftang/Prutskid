@@ -14,7 +14,7 @@ Platform assembly: C:\Users\Mikkel\Documents\Prutskid\prutskid_Data\Managed\Unit
 Loading C:\Users\Mikkel\Documents\Prutskid\prutskid_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Mikkel\Documents\Prutskid\prutskid_Data\Managed\MonitorComponents.dll (this message is harmless)
 Loading C:\Users\Mikkel\Documents\Prutskid\prutskid_Data\Managed\MonitorComponents.dll into Unity Child Domain
-- Completed reload, in  0.105 seconds
+- Completed reload, in  0.044 seconds
 desktop: 1440x900 60Hz; virtual: 2720x1024 at 0,-124
 <RI> Initializing input.
 <RI> Input initialized.
